@@ -1,45 +1,35 @@
-var  x1 = 0;
-var  y1 = 0;
-var  x2 = 0;
-var  y2 = 0;
+let  x1 = 0;
+let  y1 = 0;
+let  x2 = 0;
+let  y2 = 0;
 
-var easing1=0.1
-var easing2=0.05
+let easing1=0.1
+let easing2=0.05
 
 function setup() {
   
- 
     createCanvas(windowWidth, windowHeight);
     background(0);
 
-   
 }
 
 function draw() {
-  
-    //background
-    //fill(color(300*mouseX/width, 200*mouseX/width+200*mouseY/height, 300*mouseY/height,200));
-    //rect(0, 0, width, height);
+
     background(0)
   
-    //text
-    fill(255, 255, 255);
-	textSize(40);
-	text('#017',width/2-50,mouseY+200);  
-    
     //location
     textSize(15)
     text(int(mouseX)+","+int(mouseY),50,50)
 
-    var targetX1 = mouseX;
+    let targetX1 = mouseX;
     x1 = x1 + (targetX1 - x1) * easing1;
-    var targetY1 = mouseY;
+    let targetY1 = mouseY;
     y1 = y1 + (targetY1 - y1) * easing1;
   
-    var targetX2 = mouseX;
+    let targetX2 = mouseX;
     x2 = map(mouseX, 0, windowWidth, x1 - 80, x1 + 80);
     x2 = x2 + (targetX2 - x2) * easing1;
-    var targetY2 = mouseY;
+    let targetY2 = mouseY;
     y2 = map(mouseY, 0, windowWidth, y1 - 60, y1 + 60);
     y2 = y2 + (targetY2 - y2) * easing1;
   
