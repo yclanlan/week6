@@ -14,7 +14,9 @@ function setup() {
 }
 
 function draw() {
-    background(0);
+    background(300*mouseX/width, 
+    200*mouseX/width+200*mouseY/height, 
+    300*mouseY/height,150);
   
     //print mouse location
     fill(255);
@@ -54,4 +56,8 @@ function drawCircle(color, x, y, size){
     // ellipse(x, y, w, [h])
     ellipse(x,y,size);
 }
+
+function windowResized(){
+    resizeCanvas(windowWidth, windowHeight);
+  }
 
